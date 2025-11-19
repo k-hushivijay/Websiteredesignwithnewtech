@@ -113,10 +113,11 @@ export function FixedAssetPage({ onNavigate }: FixedAssetPageProps) {
             <div className="inline-flex items-center justify-center w-20 h-20 bg-primary rounded-full mb-6">
               <Box className="w-10 h-10 text-white" />
             </div>
-            <h1 className="mb-6">Fixed Asset Management System</h1>
+            <h1 className="mb-6">Fixed Asset & Inventory Audit / Automation Solutions</h1>
             <p className="text-xl text-muted-foreground mb-8">
-              Complete asset tracking solution with RFID, Barcode, and comprehensive lifecycle management. 
-              Automate asset audits, track depreciation, and ensure compliance effortlessly.
+              Complete asset tracking and inventory management solution with RFID, Barcode, lifecycle tracking, 
+              valuation, and compliance. Automate asset audits, track inventory in real-time, and ensure 
+              regulatory compliance effortlessly.
             </p>
             <div className="flex gap-4 justify-center">
               <Button size="lg" onClick={() => onNavigate?.('contact')}>Request Demo</Button>
@@ -132,9 +133,9 @@ export function FixedAssetPage({ onNavigate }: FixedAssetPageProps) {
       <section className="py-20 bg-background">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
-            <h2 className="mb-4">Comprehensive Asset Management</h2>
+            <h2 className="mb-4">Comprehensive Asset & Inventory Management</h2>
             <p className="text-muted-foreground max-w-2xl mx-auto">
-              Everything you need to track, manage, and optimize your organization's fixed assets
+              Everything you need to track, manage, and optimize your organization's fixed assets and inventory
             </p>
           </div>
 

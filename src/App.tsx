@@ -10,7 +10,7 @@ import { ClientsPage } from './pages/ClientsPage';
 import { ContactPage } from './pages/ContactPage';
 import { PatientEMRPage } from './pages/PatientEMRPage';
 import { FixedAssetPage } from './pages/FixedAssetPage';
-import { HeritagePage } from './pages/HeritagePage';
+import { InternationalMedicalTourismPage } from './pages/InternationalMedicalTourismPage';
 
 export default function App() {
   const [currentPage, setCurrentPage] = useState('home');
@@ -31,10 +31,10 @@ export default function App() {
         return <ContactPage />;
       case 'patient-emr':
         return <PatientEMRPage onNavigate={setCurrentPage} />;
-      case 'fixed-asset':
+      case 'fixed-asset-inventory':
         return <FixedAssetPage onNavigate={setCurrentPage} />;
-      case 'heritage':
-        return <HeritagePage onNavigate={setCurrentPage} />;
+      case 'medical-tourism':
+        return <InternationalMedicalTourismPage onNavigate={setCurrentPage} />;
       default:
         return <HomePage />;
     }

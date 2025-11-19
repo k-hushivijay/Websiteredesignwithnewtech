@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { Menu, X, ChevronDown, FileText, Box, BookOpen } from 'lucide-react';
+import { Menu, X, ChevronDown, FileText, Box, Globe } from 'lucide-react';
 import { Button } from './ui/button';
 import logo from 'figma:asset/918b477c0df526c77d56e64af98643e2308b399a.png';
 
@@ -34,18 +34,18 @@ export function Navbar({ currentPage = 'home', onNavigate }: NavbarProps) {
       description: 'OPD/IPD records, prescriptions, vitals, lab reports'
     },
     {
-      page: 'fixed-asset',
+      page: 'fixed-asset-inventory',
       icon: <Box className="w-6 h-6 text-primary" />,
-      title: 'Fixed Asset Management',
-      subtitle: 'RFID, Barcode, Asset Lifecycle & Audit',
-      description: 'Asset tracking, valuation, depreciation, audit automation'
+      title: 'Fixed Asset & Inventory Audit / Automation Solutions',
+      subtitle: 'RFID, Barcode, Lifecycle Tracking, Valuation & Compliance',
+      description: 'FAM & Inventory Management with complete automation'
     },
     {
-      page: 'heritage',
-      icon: <BookOpen className="w-6 h-6 text-primary" />,
-      title: 'Heritage Division',
-      subtitle: 'CSR & Healthcare Heritage Preservation',
-      description: 'Record digitization & legacy healthcare initiatives'
+      page: 'medical-tourism',
+      icon: <Globe className="w-6 h-6 text-primary" />,
+      title: 'International Medical Tourism',
+      subtitle: 'Affordable, High-Quality Medical Treatment in India',
+      description: 'World-class hospitals, expert care, comprehensive support'
     }
   ];
 
@@ -88,7 +88,7 @@ export function Navbar({ currentPage = 'home', onNavigate }: NavbarProps) {
             >
               <button
                 className={`flex items-center gap-1 transition-colors ${
-                  ['patient-emr', 'fixed-asset', 'heritage'].includes(currentPage)
+                  ['patient-emr', 'fixed-asset-inventory', 'medical-tourism'].includes(currentPage)
                     ? 'text-primary'
                     : 'text-foreground hover:text-primary'
                 }`}
