@@ -1,25 +1,35 @@
-import { Facebook, Twitter, Linkedin, Instagram, Youtube } from 'lucide-react';
+import { Facebook, Twitter, Linkedin, Instagram, Youtube, Phone, Mail, MapPin } from 'lucide-react';
 import logo from 'figma:asset/918b477c0df526c77d56e64af98643e2308b399a.png';
+
+interface FooterProps {
+  onNavigate?: (page: string) => void;
+}
 
 const footerLinks = {
   quickLinks: [
-    { name: 'Home', href: '#home' },
-    { name: 'About Us', href: '#about' },
-    { name: 'Services', href: '#services' },
-    { name: 'Gallery', href: '#gallery' },
-    { name: 'Clients', href: '#clients' },
-    { name: 'Contact Us', href: '#contact' },
+    { name: 'Home', page: 'home' },
+    { name: 'About Us', page: 'about' },
+    { name: 'Services', page: 'services' },
+    { name: 'Gallery', page: 'gallery' },
+    { name: 'Clients', page: 'clients' },
+    { name: 'Contact Us', page: 'contact' },
   ],
   social: [
-    { icon: Facebook, href: '#', label: 'Facebook' },
-    { icon: Twitter, href: '#', label: 'Twitter' },
-    { icon: Linkedin, href: '#', label: 'LinkedIn' },
-    { icon: Instagram, href: '#', label: 'Instagram' },
-    { icon: Youtube, href: '#', label: 'YouTube' },
+    { icon: Facebook, href: 'https://www.facebook.com/', label: 'Facebook' },
+    { icon: Twitter, href: 'https://twitter.com/', label: 'Twitter' },
+    { icon: Linkedin, href: 'https://www.linkedin.com/', label: 'LinkedIn' },
+    { icon: Instagram, href: 'https://www.instagram.com/', label: 'Instagram' },
+    { icon: Youtube, href: 'https://www.youtube.com/', label: 'YouTube' },
   ],
 };
 
-export function Footer() {
+export function Footer({ onNavigate }: FooterProps) {
+  const handleNavigation = (page: string) => {
+    if (onNavigate) {
+      onNavigate(page);
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+  };
   return (
     <footer className="bg-foreground text-background">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
@@ -38,12 +48,12 @@ export function Footer() {
             <ul className="space-y-2">
               {footerLinks.quickLinks.map((link, index) => (
                 <li key={index}>
-                  <a
-                    href={link.href}
-                    className="text-background/80 hover:text-background transition-colors"
+                  <button
+                    onClick={() => handleNavigation(link.page)}
+                    className="text-background/80 hover:text-background transition-colors text-left"
                   >
                     {link.name}
-                  </a>
+                  </button>
                 </li>
               ))}
             </ul>
@@ -53,18 +63,38 @@ export function Footer() {
           <div>
             <h4 className="mb-4">Contact</h4>
             <div className="space-y-3 text-background/80">
-              <div>
-                <p className="mb-1">Phone</p>
-                <p>+91 9314420245</p>
+              <div className="flex items-start gap-2">
+                <Phone size={18} className="mt-0.5 flex-shrink-0" />
+                <div>
+                  <p className="mb-1">Phone</p>
+                  <a href="tel:+919314420245" className="hover:text-background transition-colors">
+                    +91 9314420245
+                  </a>
+                </div>
               </div>
-              <div>
-                <p className="mb-1">Email</p>
-                <p>vikash@valuekare.in</p>
+              <div className="flex items-start gap-2">
+                <Mail size={18} className="mt-0.5 flex-shrink-0" />
+                <div>
+                  <p className="mb-1">Email</p>
+                  <a href="mailto:vikash@valuekare.in" className="hover:text-background transition-colors">
+                    vikash@valuekare.in
+                  </a>
+                </div>
               </div>
-              <div>
-                <p className="mb-1">Address</p>
-                <p>ValueKare Technologies PVT LTD<br />
-                Malviya National Institute Of Technology (MNIT) Incubation Center MIIC Start Up Room No 107 Jawahar lal Nehru Marg Malviya nagar Jaipur 302017</p>
+              <div className="flex items-start gap-2">
+                <MapPin size={18} className="mt-0.5 flex-shrink-0" />
+                <div>
+                  <p className="mb-1">Address</p>
+                  <a 
+                    href="https://www.google.com/maps/search/?api=1&query=Malviya+National+Institute+Of+Technology+MNIT+Incubation+Center+MIIC+Jaipur"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="hover:text-background transition-colors"
+                  >
+                    ValueKare Technologies PVT LTD<br />
+                    Malviya National Institute Of Technology (MNIT) Incubation Center MIIC Start Up Room No 107 Jawahar lal Nehru Marg Malviya nagar Jaipur 302017
+                  </a>
+                </div>
               </div>
             </div>
           </div>
@@ -78,6 +108,8 @@ export function Footer() {
               <a
                 key={index}
                 href={social.href}
+                target="_blank"
+                rel="noopener noreferrer"
                 aria-label={social.label}
                 className="w-10 h-10 bg-background/10 hover:bg-background/20 rounded-full flex items-center justify-center transition-colors"
               >

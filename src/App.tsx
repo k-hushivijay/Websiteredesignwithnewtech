@@ -8,6 +8,9 @@ import { ServicesPage } from './pages/ServicesPage';
 import { GalleryPage } from './pages/GalleryPage';
 import { ClientsPage } from './pages/ClientsPage';
 import { ContactPage } from './pages/ContactPage';
+import { PatientEMRPage } from './pages/PatientEMRPage';
+import { FixedAssetPage } from './pages/FixedAssetPage';
+import { HeritagePage } from './pages/HeritagePage';
 
 export default function App() {
   const [currentPage, setCurrentPage] = useState('home');
@@ -26,6 +29,12 @@ export default function App() {
         return <ClientsPage />;
       case 'contact':
         return <ContactPage />;
+      case 'patient-emr':
+        return <PatientEMRPage onNavigate={setCurrentPage} />;
+      case 'fixed-asset':
+        return <FixedAssetPage onNavigate={setCurrentPage} />;
+      case 'heritage':
+        return <HeritagePage onNavigate={setCurrentPage} />;
       default:
         return <HomePage />;
     }
@@ -37,7 +46,7 @@ export default function App() {
       <main>
         {renderPage()}
       </main>
-      <Footer />
+      <Footer onNavigate={setCurrentPage} />
       <Toaster />
     </div>
   );

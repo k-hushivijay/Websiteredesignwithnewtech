@@ -51,20 +51,20 @@ export function Contact() {
           {/* Map Container */}
           <div className="relative w-full h-[400px] md:h-[500px] rounded-2xl overflow-hidden shadow-2xl mb-6">
             <iframe
-              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3558.1!2d75.8174!3d26.9162!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x396db5c2c0000001%3A0x1!2sValueKare%20Technologies%20PVT%20LTD%2C%20MNIT%20Incubation%20Center%20MIIC%2C%20Start%20Up%20Room%20No%20107%2C%20Jawahar%20lal%20Nehru%20Marg%2C%20Malviya%20Nagar%2C%20Jaipur%20-%20302017!5e0!3m2!1sen!2sin!4v1700000000000!5m2!1sen!2sin"
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3558.085470876912!2d75.81529237548022!3d26.916174976688596!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x396db47f0c6396c9%3A0xb6c9a5a8c0e24d89!2sMalviya%20National%20Institute%20of%20Technology%20Jaipur!5e0!3m2!1sen!2sin!4v1732035894321!5m2!1sen!2sin"
               width="100%"
               height="100%"
               style={{ border: 0 }}
               allowFullScreen
               loading="lazy"
               referrerPolicy="no-referrer-when-downgrade"
-              title="ValueKare Technologies Location"
+              title="ValueKare Technologies at MNIT Incubation Center"
             ></iframe>
             
             {/* Map Overlay Label */}
-            <div className="absolute top-4 left-4 bg-background shadow-lg rounded-lg px-4 py-3">
+            <div className="absolute top-4 left-4 bg-background shadow-lg rounded-lg px-4 py-3 max-w-xs">
               <p className="text-sm">
-                <span className="text-primary">📍</span> ValueKare Technologies Pvt Ltd - Jaipur
+                <span className="text-primary">📍</span> ValueKare Technologies - MNIT Incubation Center, Jaipur
               </p>
             </div>
           </div>
