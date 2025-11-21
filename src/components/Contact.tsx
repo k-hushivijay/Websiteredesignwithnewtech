@@ -100,7 +100,7 @@ export function Contact() {
             </div>
 
             {/* Phone */}
-            <div className="flex items-start gap-4">
+            {/* <div className="flex items-start gap-4">
               <div className="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center flex-shrink-0">
                 <Phone className="text-primary" size={24} />
               </div>
@@ -110,10 +110,10 @@ export function Contact() {
                   +91 9314420245
                 </a>
               </div>
-            </div>
+            </div> */}
 
             {/* Email */}
-            <div className="flex items-start gap-4">
+            {/* <div className="flex items-start gap-4">
               <div className="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center flex-shrink-0">
                 <Mail className="text-primary" size={24} />
               </div>
@@ -123,10 +123,10 @@ export function Contact() {
                   vikash@valuekare.in
                 </a>
               </div>
-            </div>
+            </div> */}
 
             {/* Address */}
-            <div className="pt-4">
+            {/* <div className="pt-4">
               <p className="mb-2">Address</p>
               <p className="text-muted-foreground">
                 ValueKare Technologies PVT LTD<br />
@@ -136,7 +136,7 @@ export function Contact() {
                 Jawahar lal Nehru Marg<br />
                 Malviya Nagar, Jaipur - 302017
               </p>
-            </div>
+            </div> */}
           </motion.div>
 
           {/* Right Column - Contact Form */}
